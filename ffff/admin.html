@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Admin Dashboard</h1>
+    <button id="show-preinscripciones" class="btn btn-primary">Ver Preinscripciones</button>
+    <button id="show-anteproyectos" class="btn btn-secondary">Ver Anteproyectos</button>
+    <button id="logout-button" class="btn btn-danger">Cerrar Sesión</button>
+
+    <div id="preinscripciones-container" class="mt-3" style="display: none;"></div>
+    <div id="anteproyectos-container" class="mt-3" style="display: none;"></div>
+    <!-- Nueva sección para proyectos -->
+<div id="proyectos-container" class="mt-3">
+  <h5>Proyectos</h5>
+  <button id="show-proyectos" class="btn btn-info">Mostrar Proyectos</button>
+  <div id="proyectos-list" class="mt-3"></div>
+  
+</div>
+
+    <!-- Nueva sección para notificaciones -->
+    <div id="notifications-container" class="mt-3">
+      <h5>Notificaciones</h5>
+      <div id="notifications-list"></div>
+    </div>
+  </div>
+
+  <!-- Modal para asignar jurados -->
+  <div class="modal fade" id="selectJuradosModal" tabindex="-1" aria-labelledby="selectJuradosModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="selectJuradosModalLabel">Seleccionar Jurados</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="select-jurados-form">
+            <input type="hidden" id="anteproyecto-id">
+            <div class="form-group">
+              <label for="jurado1">Jurado 1</label>
+              <select id="jurado1" class="form-control" required>
+                <!-- Opciones de jurados -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="jurado2">Jurado 2</label>
+              <select id="jurado2" class="form-control" required>
+                <!-- Opciones de jurados -->
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Asignar Jurados</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./admin.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
